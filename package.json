@@ -1,0 +1,18 @@
+{
+  "name": "welcomebot",
+  "version": "1.0.0",
+  "description": "A Welcome bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Exploit#1337",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "fs": "0.0.1-security",
+    "jimp": "^0.6.0",
+    "ms": "^2.1.1",
+    "quick.db": "^7.0.0-b22"
+  }
+}
