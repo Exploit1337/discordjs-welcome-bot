@@ -46,11 +46,11 @@ bot.on("message", async message => {
 })
 bot.on('guildMemberAdd', async member => {
 	
-	let wChan = db.fetch(`${member.guild.id}`)
+	let chx =db.get(`${member.guild.id}`)
 	
-	if(wChan == null) return;
+	if(chx == null) return;
 	
-	if(!wChan) return;
+	if(!chx) return;
 	
 let font = await jimp.loadFont(jimp.FONT_SANS_32_BLACK) //We declare a 32px font
   let font64 = await jimp.loadFont(jimp.FONT_SANS_64_WHITE) //We declare a 64px font
@@ -68,12 +68,9 @@ let font = await jimp.loadFont(jimp.FONT_SANS_32_BLACK) //We declare a 32px font
   welcome.print(bfont64, 265, 125, `To ${member.guild.name}`)
   welcome.print(font64, 265, 195, `There are now ${member.guild.memberCount} users`)
   welcome.composite(avatar, 40, 55).write('Welcome2.png') //Put the avatar on the image and create the Welcome2.png bot
-  try{
-  member.guild.channels.get(wChan).send(``, { files: ["Welcome2.png"] }) //Send the image to the channel
-  }catch(e){
-	  // dont do anything if error occurs
-	  // if this occurs bot probably can't send images or messages
-  }
+  
+  member.guild.channels.get(chx).send(``, { files: ["Welcome2.png"] }) //Send the image to the channel
+  
   })
 
 	
