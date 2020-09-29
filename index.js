@@ -73,6 +73,7 @@ let font = await jimp.loadFont(jimp.FONT_SANS_32_BLACK) //We declare a 32px font
   }catch(e){
 	  // dont do anything if error occurs
 	  // if this occurs bot probably can't send images or messages
+	  console.error(e);
   }
   })
 
